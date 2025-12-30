@@ -11,6 +11,7 @@ packages:
   - rebuild-detector
   - reflector
   - git
+  - github-cli
   - which
   - man-db
   - man-pages
