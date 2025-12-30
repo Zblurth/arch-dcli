@@ -1,0 +1,62 @@
+# Host configuration for arch
+# Optimized CachyOS Workstation (Hierarchical Architecture)
+
+host: arch
+description: CachyOS Workstation (Ryzen 7800X3D + AMD GPU)
+
+# Enabled modules (Hierarchical)
+enabled_modules:
+  # --- Core (Bootable Layer) ---
+  - core/base
+  - core/network
+  - core/admin
+  - core/cachyos
+  
+  # --- Hardware ---
+  - hardware/amdgpu
+  
+  # --- Desktop (Graphical Layer) ---
+  - desktop/niri
+  - desktop/audio
+  - desktop/shell
+  - fonts            # Kept top-level for now
+  
+  # --- Apps (User Layer) ---
+  - apps/internet
+  - apps/media
+  - apps/dev
+  - apps/utils
+  - apps/gaming
+
+# Host-specific packages
+packages: []
+
+# Exclude packages
+exclude: []
+
+# System Settings
+flatpak_scope: user
+auto_prune: false
+backup_tool: snapper
+snapper_config: root
+
+# Service Management (Rescued & Optimized)
+services:
+  enabled:
+    - NetworkManager
+    - NetworkManager-dispatcher
+    - bluetooth
+    - sshd
+    - ly
+    - ananicy-cpp           # CachyOS Auto-Nice
+    - ufw                   # Firewall
+    - avahi-daemon          # Local Network Discovery
+    - swayosd-libinput-backend # OSD Backend
+    - snapper-timeline.timer
+    - snapper-cleanup.timer
+    - grub-btrfsd
+    - power-profiles-daemon
+  disabled:
+    - sddm
+    - lightdm
+    - gdm

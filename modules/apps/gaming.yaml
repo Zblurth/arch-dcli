@@ -1,0 +1,10 @@
+# Gaming Configuration
+description: Steam + Optimizations
+packages:
+  - steam
+  - gamescope
+  - mangohud
+  - gamemode
+  - protonup-qt
+  - lib32-mangohud
+  - lib32-gamemode

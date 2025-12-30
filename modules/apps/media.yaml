@@ -1,0 +1,12 @@
+# Media & Multimedia
+description: GAP FILLED Image/Video viewing and Screenshots
+packages:
+  - mpv
+  - imv
+  - grim
+  - slurp
+  - playerctl
+  - brightnessctl
+  - cava
+  - ffmpeg
+  - ffmpegthumbnailer

@@ -1,0 +1,16 @@
+# Base System Essentials
+description: Immutable core (Kernels, Firmware, Microcode)
+packages:
+  - base
+  - linux-cachyos
+  - linux-cachyos-headers
+  - linux-cachyos-lts
+  - linux-cachyos-lts-headers
+  - linux-firmware
+  - amd-ucode
+  - mkinitcpio
+  - grub
+  - efibootmgr
+  - os-prober
+  - grub-btrfs
+  - grub-hook

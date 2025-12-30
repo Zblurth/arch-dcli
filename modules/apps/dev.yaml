@@ -1,0 +1,10 @@
+# Development & Productivity
+description: Editors and Tools
+packages:
+  - zed
+  - antigravity
+  - neovim
+  - gemini-cli
+  - github-cli
+  - obsidian
+  - virt-manager

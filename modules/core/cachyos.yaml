@@ -1,0 +1,19 @@
+# CachyOS Optimization
+description: Rescued performance hooks and schedulers
+packages:
+  - cachyos-hooks
+  - cachyos-settings
+  - cachyos-keyring
+  - cachyos-mirrorlist
+  - cachyos-v3-mirrorlist
+  - cachyos-v4-mirrorlist
+  - cachyos-rate-mirrors
+  - cachyos-kernel-manager
+  - scx-scheds
+  - power-profiles-daemon # Critical for Ryzen Boost
+  - chwd
+  - btrfs-assistant
+  - gvfs                  # Trash/USB support
+  - gvfs-mtp              # Phone support
+  - xdg-user-dirs         # Home folder standards
+  - xdg-utils             # xdg-open support

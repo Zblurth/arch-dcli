@@ -1,0 +1,6 @@
+# Internet & Web
+description: Browsers and Networking UI
+packages:
+  - vivaldi
+  - blueman # GAP FILLED: Bluetooth UI for Niri
+  - network-manager-applet

@@ -1,0 +1,7 @@
+# Noctalia Dependencies
+description: Gap-filled dependencies for Noctalia Shell
+packages:
+  - noctalia-shell
+  - qt6-multimedia # Critical for Noctalia UI
+  - gpu-screen-recorder # Integrated recording
+  - swayosd

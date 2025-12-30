@@ -1,0 +1,12 @@
+# Niri Compositor Session
+description: Niri core + Portals + Login
+packages:
+  - niri
+  - xwayland-satellite
+  - ly
+  - xdg-desktop-portal-gtk
+  - xdg-desktop-portal-gnome
+  - polkit-gnome
+  - gnome-keyring
+  - seahorse
+  - accountsservice # Needed for Ly/User lists

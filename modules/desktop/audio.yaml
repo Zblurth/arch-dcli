@@ -1,0 +1,8 @@
+# Audio Stack
+description: Rescued Pipewire + Compatibility Layers
+packages:
+  - pipewire
+  - wireplumber
+  - pipewire-pulse
+  - pipewire-alsa
+  - pavucontrol

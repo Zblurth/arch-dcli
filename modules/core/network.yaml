@@ -1,0 +1,15 @@
+# Connectivity Infrastructure
+description: Rescued networking and communication daemons
+packages:
+  - networkmanager
+  - networkmanager-openvpn
+  - iwd
+  - wireless-regdb
+  - wpa_supplicant
+  - bluez
+  - bluez-utils
+  - bluez-libs
+  - openssh
+  - rsync
+  - wget
+  - curl

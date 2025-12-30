@@ -1,0 +1,22 @@
+# System Utilities
+description: File managers and backends
+packages:
+  - kitty
+  - starship
+  - zsh-syntax-highlighting
+  - zsh-autosuggestions
+  - thunar              # Main GUI File Manager (Minimal Backup)
+  - tumbler             # Thumbnail support for Thunar
+  - file-roller
+  - unzip # GAP FILLED: Archive backends
+  - unrar
+  - p7zip
+  - wl-clipboard
+  - cliphist
+  - python-pywal
+  - fastfetch
+  - duf
+  - ncdu
+  - btop
+  - tree
+  - jq

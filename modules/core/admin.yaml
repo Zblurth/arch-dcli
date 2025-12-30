@@ -1,0 +1,17 @@
+# System Administration
+description: Rescued privilege and maintenance tools
+packages:
+  - base-devel
+  - sudo
+  - dcli
+  - snapper
+  - snap-pac
+  - inotify-tools
+  - pacman-contrib
+  - rebuild-detector
+  - reflector
+  - git
+  - which
+  - man-db
+  - man-pages
+  - bash-completion

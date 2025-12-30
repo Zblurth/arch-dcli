@@ -1,0 +1,21 @@
+# Font Configuration
+# Comprehensive character support + Professional aesthetics
+
+description: System fonts including Noto fallback, Nerd Fonts, and user preferences
+
+packages:
+  # --- Main Fonts ---
+  - otf-jost              # Your main Sans/Serif choice
+  - ttf-jetbrains-mono-nerd # Professional Mono + Icons (Essential for Noctalia)
+  
+  # --- Global Character Support (The "Noto" Stack) ---
+  - noto-fonts            # Latin, Greek, Cyrillic
+  - noto-fonts-cjk        # Chinese, Japanese, Korean
+  - noto-fonts-emoji      # Standard emojis
+  
+  # --- Icon Sets ---
+  - ttf-font-awesome      # Extra icons for bars/shells
+  
+  # --- Professional/Compatibility ---
+  - ttf-liberation        # Metrics-compatible with MS Office fonts
+  - ttf-meslo-nerd        # Excellent fallback mono font
