@@ -47,7 +47,7 @@ services:
     - NetworkManager-dispatcher
     - bluetooth
     - sshd
-    - ly
+    - ly@tty2               # TUI Login Manager
     - ananicy-cpp           # CachyOS Auto-Nice
     - ufw                   # Firewall
     - avahi-daemon          # Local Network Discovery

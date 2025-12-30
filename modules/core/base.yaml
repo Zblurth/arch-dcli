@@ -2,15 +2,22 @@
 description: Immutable core (Kernels, Firmware, Microcode)
 packages:
   - base
+  - base-devel
+  - btrfs-progs
+  - cryptsetup
+  - lvm2
   - linux-cachyos
   - linux-cachyos-headers
   - linux-cachyos-lts
   - linux-cachyos-lts-headers
   - linux-firmware
+  - alsa-firmware
+  - sof-firmware
   - amd-ucode
   - mkinitcpio
   - grub
   - efibootmgr
   - os-prober
   - grub-btrfs
+  - grub-btrfs-support
   - grub-hook
