@@ -3,7 +3,6 @@ description: Rescued privilege and maintenance tools
 packages:
   - base-devel
   - sudo
-  - dcli
   - snapper
   - snap-pac
   - inotify-tools

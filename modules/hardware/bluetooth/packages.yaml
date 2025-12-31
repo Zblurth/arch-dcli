@@ -1,0 +1,4 @@
+packages:
+  - bluez
+  - bluez-utils
+  - bluez-libs

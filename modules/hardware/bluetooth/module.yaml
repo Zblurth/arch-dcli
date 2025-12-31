@@ -1,0 +1,5 @@
+description: "Bluetooth Hardware Support & Auto-Enable"
+post_install_hook: "scripts/setup-bluetooth-v2.sh"
+hooks_behavior: once
+package_files:
+  - packages.yaml

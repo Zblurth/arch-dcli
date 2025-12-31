@@ -1,0 +1,238 @@
+// === QUAD-CHECKED CONFIG.KDL ===
+
+// --- Input & Gestures ---
+input {
+    keyboard {
+        xkb { layout "us"; }
+    }
+    touchpad {
+        tap
+        dwt
+        natural-scroll
+    }
+    mouse {
+        accel-profile "flat"
+    }
+    focus-follows-mouse max-scroll-amount="0%"
+    warp-mouse-to-focus
+}
+
+// KILL HOT CORNERS (User Request)
+gestures {
+    hot-corners {
+        off
+    }
+}
+
+// --- Output ---
+// (Positions are hardcoded based on your dump. If monitors act weird, delete 'position' lines)
+output "DP-1" {
+    mode "3440x1440@100.0"
+    scale 1.0
+    position x=2740 y=1455
+}
+output "DP-2" {
+    mode "1920x1080@60.0"
+    position x=820 y=1714
+}
+output "DP-3" {
+    mode "1920x1080@60.0"
+    position x=6180 y=1714
+}
+
+// --- Layout ---
+layout {
+    gaps 8
+    center-focused-column "never"
+    always-center-single-column
+
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+        proportion 1.0
+    }
+
+    default-column-width { proportion 0.5; }
+
+    focus-ring {
+        width 2
+        active-color "#cba6f7"
+        inactive-color "#45475a"
+    }
+
+    border {
+        off
+    }
+
+    shadow {
+        on
+        softness 30
+        spread 5
+        offset x=0 y=5
+        color "#00000070"
+    }
+}
+
+// --- Workspaces ---
+workspace "browser" {}
+workspace "social" {}
+workspace "3" {}
+
+// --- Window Rules ---
+// 1. Browser (Vivaldi -> Workspace 'browser')
+window-rule {
+    match app-id=r#"^vivaldi.*$"#
+    open-on-workspace "browser"
+    default-column-width { proportion 1.0; }
+}
+
+// 2. Social (Deezer/Vesktop -> Workspace 'social')
+window-rule {
+    match app-id="deezer-enhanced"
+    open-on-workspace "social"
+    default-column-width { proportion 0.33333; }
+}
+window-rule {
+    match app-id="vesktop"
+    open-on-workspace "social"
+    default-column-width { proportion 0.66667; }
+}
+
+// 3. Floating Rules & Tweaks
+window-rule {
+    match app-id=r#"^org\.wezfurlong\.wezterm$"#
+    default-column-width {}
+}
+
+// Picture-in-Picture
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+// File Managers (Floating overrides)
+window-rule {
+    match app-id="yazi-floating"
+    open-floating true
+    default-column-width { proportion 0.6; }
+    opacity 0.95
+}
+window-rule {
+    match app-id="thunar-float"
+    open-floating true
+    default-column-width { proportion 0.6; }
+    opacity 0.95
+}
+
+// Notifications (Noctalia & Steam)
+window-rule {
+    match app-id="^noctalia-shell$" title="^notification-window$"
+    open-floating true
+    default-floating-position x=16 y=16 relative-to="top-right"
+    open-focused false
+}
+window-rule {
+    match app-id="^steam$" title="^notificationtoasts.*$"
+    open-floating true
+    open-focused false
+    default-floating-position x=16 y=16 relative-to="top-right"
+}
+
+// --- Keybinds ---
+binds {
+    // === Applications ===
+    Mod+Return { spawn "wezterm"; }
+    Mod+Shift+Return { spawn "wezterm" "start" "--class" "wezterm-float"; }
+    Mod+B { spawn "vivaldi"; }
+
+    // File Managers
+    Mod+T { spawn "wezterm" "start" "--class" "yazi-floating" "--" "yazi"; }
+    Mod+Shift+T { spawn "thunar" "--name" "thunar-float"; }
+
+    // === NOCTALIA FIX (Split Arguments) ===
+    // We use 'qs' directly. The "-c" flag tells it which shell config to talk to.
+
+    // Launcher
+    Mod+Space { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+
+    // Clipboard
+    Mod+V { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard"; }
+
+    // Wallpaper Picker
+    Mod+Shift+W { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "wallpaper" "toggle"; }
+
+    // Session Menu (Logout/Reboot)
+    Mod+Shift+Q { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
+
+    // Settings / Control Center
+    Mod+Ctrl+Shift+S { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "settings" "toggle"; }
+
+    // === System Actions ===
+    Mod+S { screenshot; }
+    Mod+Q { close-window; }
+    Mod+L { spawn "loginctl" "lock-session"; }
+    Mod+U { power-off-monitors; }
+
+    // === Window Focus ===
+    Mod+Left  { focus-column-left; }
+    Mod+Right { focus-column-right; }
+    Mod+Down  { focus-workspace-down; }
+    Mod+Up    { focus-workspace-up; }
+
+    // === Window Movement ===
+    Mod+Shift+Left  { move-column-left; }
+    Mod+Shift+Right { move-column-right; }
+    Mod+Shift+Down  { move-column-to-workspace-down; }
+    Mod+Shift+Up    { move-column-to-workspace-up; }
+
+    // === Workspace Targeting ===
+    Mod+1 { focus-workspace "browser"; }
+    Mod+2 { focus-workspace "social"; }
+    Mod+3 { focus-workspace "3"; }
+
+    Mod+Shift+1 { move-column-to-workspace "browser"; }
+    Mod+Shift+2 { move-column-to-workspace "social"; }
+    Mod+Shift+3 { move-column-to-workspace "3"; }
+
+    // === Layout & Sizing ===
+    Mod+Minus { set-column-width "33.333%"; }
+    Mod+Equal { set-column-width "50%"; }
+    Mod+BracketLeft { set-column-width "66.667%"; }
+    Mod+BracketRight { set-column-width "100%"; }
+    Mod+R { switch-preset-column-width; }
+    Mod+F { maximize-column; }
+    Mod+Shift+F { fullscreen-window; }
+    Mod+C { center-column; }
+    Mod+Comma  { consume-window-into-column; }
+    Mod+Period { expel-window-from-column; }
+
+    // === Audio & Hardware ===
+    // Using swayosd-client for OSD feedback
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "raise"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "lower"; }
+    XF86AudioMute        allow-when-locked=true { spawn "swayosd-client" "--output-volume" "mute-toggle"; }
+
+    // Media Controls
+    XF86AudioPlay        allow-when-locked=true { spawn "playerctl" "play-pause"; }
+    XF86AudioNext        allow-when-locked=true { spawn "playerctl" "next"; }
+    XF86AudioPrev        allow-when-locked=true { spawn "playerctl" "previous"; }
+}
+
+// --- Startup ---
+spawn-at-startup "noctalia-shell"
+spawn-at-startup "swayosd-server"
+spawn-at-startup "xwayland-satellite"
+// Removed conflicting swww-daemon (Noctalia handles wallpaper)
+spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store"
+spawn-at-startup "bash" "-c" "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+
+// App Startup
+spawn-at-startup "vivaldi"
+spawn-at-startup "bash" "-c" "deezer-enhanced --disable-gpu --enable-features=UseOzonePlatform --ozone-platform=wayland"
+
+environment {
+    XDG_CURRENT_DESKTOP "niri"
+    QT_QPA_PLATFORM "wayland"
+    DISPLAY ":0"
+}

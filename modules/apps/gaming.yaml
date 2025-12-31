@@ -6,5 +6,6 @@ packages:
   - mangohud
   - gamemode
   - protonup-qt
+  - proton-cachyos
   - lib32-mangohud
   - lib32-gamemode

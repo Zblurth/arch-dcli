@@ -6,9 +6,6 @@ packages:
   - iwd
   - wireless-regdb
   - wpa_supplicant
-  - bluez
-  - bluez-utils
-  - bluez-libs
   - openssh
   - rsync
   - wget

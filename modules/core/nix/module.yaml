@@ -1,0 +1,8 @@
+description: "Nix Package Manager Integration"
+
+# Post-install hook to set up nix-daemon and flakes
+post_install_hook: "scripts/setup.sh"
+hooks_behavior: once
+
+package_files:
+  - packages.yaml

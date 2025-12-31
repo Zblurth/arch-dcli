@@ -1,0 +1,9 @@
+# Desktop Visuals & Theme Engines
+description: Theme managers and icon sets for Qt/GTK harmony
+packages:
+  - qt5ct
+  - qt6ct
+  - nwg-look # GTK theme configuration for Wayland
+  - tela-circle-icon-theme-git
+  - kvantum # SVG-based theme engine for Qt
+  - qt6-svg # Critical for SVG icons in Qt6 apps

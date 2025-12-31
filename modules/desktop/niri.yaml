@@ -10,3 +10,5 @@ packages:
   - gnome-keyring
   - seahorse
   - accountsservice # Needed for Ly/User lists
+  - cliphist
+  - wl-clipboard

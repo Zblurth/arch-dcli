@@ -9,8 +9,10 @@ enabled_modules:
   # --- Core (Bootable Layer) ---
   - core/base
   - core/network
+  - hardware/bluetooth
   - core/admin
   - core/cachyos
+  - core/nix
   
   # --- Hardware ---
   - hardware/amdgpu
@@ -19,6 +21,8 @@ enabled_modules:
   - desktop/niri
   - desktop/audio
   - desktop/shell
+  - desktop/visuals
+  - desktop/theme
   - fonts            # Kept top-level for now
   
   # --- Apps (User Layer) ---
@@ -56,6 +60,7 @@ services:
     - snapper-cleanup.timer
     - grub-btrfsd
     - power-profiles-daemon
+    - coolercontrold
   disabled:
     - sddm
     - lightdm

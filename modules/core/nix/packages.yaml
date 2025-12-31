@@ -1,0 +1,4 @@
+# Nix Package Manager
+description: Declarative package management for isolated tools
+packages:
+  - nix

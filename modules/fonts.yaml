@@ -14,7 +14,7 @@ packages:
   - noto-fonts-emoji      # Standard emojis
   
   # --- Icon Sets ---
-  - ttf-font-awesome      # Extra icons for bars/shells
+  - woff2-font-awesome      # Extra icons for bars/shells
   
   # --- Professional/Compatibility ---
   - ttf-liberation        # Metrics-compatible with MS Office fonts
