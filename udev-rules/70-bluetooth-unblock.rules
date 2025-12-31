@@ -1,0 +1,2 @@
+# Force unblock Bluetooth radio on detection
+SUBSYSTEM=="rfkill", ATTR{type}=="bluetooth", ATTR{state}="1"

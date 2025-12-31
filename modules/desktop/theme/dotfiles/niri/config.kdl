@@ -80,6 +80,12 @@ workspace "social" {}
 workspace "3" {}
 
 // --- Window Rules ---
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+    draw-border-with-background false
+}
+
 // 1. Browser (Vivaldi -> Workspace 'browser')
 window-rule {
     match app-id=r#"^vivaldi.*$"#
@@ -231,8 +237,3 @@ spawn-at-startup "bash" "-c" "/usr/lib/polkit-gnome/polkit-gnome-authentication-
 spawn-at-startup "vivaldi"
 spawn-at-startup "bash" "-c" "deezer-enhanced --disable-gpu --enable-features=UseOzonePlatform --ozone-platform=wayland"
 
-environment {
-    XDG_CURRENT_DESKTOP "niri"
-    QT_QPA_PLATFORM "wayland"
-    DISPLAY ":0"
-}
