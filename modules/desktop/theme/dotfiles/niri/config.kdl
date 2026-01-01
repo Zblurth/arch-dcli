@@ -154,7 +154,7 @@ binds {
 
     // File Managers
     Mod+T { spawn "wezterm" "start" "--class" "yazi-floating" "--" "yazi"; }
-    Mod+Shift+T { spawn "thunar" "--name" "thunar-float"; }
+    Mod+Shift+T { spawn "thunar"; }
 
     // === NOCTALIA FIX (Split Arguments) ===
     // We use 'qs' directly. The "-c" flag tells it which shell config to talk to.
@@ -234,6 +234,7 @@ spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store"
 spawn-at-startup "bash" "-c" "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 
 // App Startup
+spawn-at-startup "bash" "-c" "sleep 2 && corectrl --minimize"
 spawn-at-startup "vivaldi"
 spawn-at-startup "bash" "-c" "deezer-enhanced --disable-gpu --enable-features=UseOzonePlatform --ozone-platform=wayland"
 

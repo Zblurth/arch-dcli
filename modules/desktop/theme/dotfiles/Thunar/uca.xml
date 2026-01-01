@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Terminal Here</name>
+	<submenu></submenu>
+	<unique-id>1704067200000001</unique-id>
+	<command>wezterm start --cwd %f</command>
+	<description>Open terminal in this directory</description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>zed</icon>
+	<name>Open in Zed</name>
+	<submenu></submenu>
+	<unique-id>1704067200000002</unique-id>
+	<command>zed %f</command>
+	<description>Open file or folder in Zed</description>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>system-file-manager</icon>
+	<name>Edit as Root</name>
+	<submenu></submenu>
+	<unique-id>1704067200000003</unique-id>
+	<command>sudo -A thunar %f</command>
+	<description>Open this folder or file with administrative privileges</description>
+	<patterns>*</patterns>
+	<directories/>
+	<text-files/>
+</action>
+<action>
+	<icon>background</icon>
+	<name>Set as Wallpaper</name>
+	<submenu></submenu>
+	<unique-id>1704067200000004</unique-id>
+	<command>cp %f ~/.config/arch-config/wallpapers/current.png &amp;&amp; dcli sync</command>
+	<description>Set this image as wallpaper and sync theme</description>
+	<patterns>*.png;*.jpg;*.jpeg;*.webp</patterns>
+	<image-files/>
+</action>
+</actions>

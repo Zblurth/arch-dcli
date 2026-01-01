@@ -1,13 +1,14 @@
 # System Utilities
 description: File managers and backends
 packages:
-  - kitty
   - wezterm
   - yazi
   - starship
   - zsh-syntax-highlighting
   - zsh-autosuggestions
   - thunar              # Main GUI File Manager (Minimal Backup)
+  - thunar-archive-plugin # Archive integration
+  - thunar-volman       # Volume manager
   - tumbler             # Thumbnail support for Thunar
   - file-roller
   - unzip # GAP FILLED: Archive backends
@@ -22,5 +23,3 @@ packages:
   - btop
   - tree
   - jq
-  - corectrl
-  - coolercontrol
