@@ -16,6 +16,7 @@ enabled_modules:
   
   # --- Hardware ---
   - hardware/amdgpu
+  - hardware/controllers
   
   # --- Desktop (Graphical Layer) ---
   - desktop/niri
@@ -56,6 +57,7 @@ services:
     - ufw                   # Firewall
     - avahi-daemon          # Local Network Discovery
     - swayosd-libinput-backend # OSD Backend
+    - inputplumber          # Flydigi/Controller Router
     - snapper-timeline.timer
     - snapper-cleanup.timer
     - grub-btrfsd

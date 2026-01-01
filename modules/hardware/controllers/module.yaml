@@ -1,3 +1,5 @@
 description: "Game Controller Udev Rules & Support"
 post_install_hook: "scripts/install-rules.sh"
 hooks_behavior: always
+package_files:
+  - packages.yaml

@@ -55,10 +55,13 @@ KERNEL=="hidraw*", ATTRS{idVendor}=="045e", ATTRS{idProduct}=="028e", MODE="0666
 # ============================================================
 
 # Flydigi Vader 4 Pro Controller (dinput mode)
+# Allow hidraw access for InputPlumber
 KERNEL=="hidraw*", ATTRS{idVendor}=="04b4", ATTRS{idProduct}=="2412", MODE="0666", TAG+="uaccess"
-# SUBSYSTEM=="input", ATTRS{idVendor}=="04b4", ATTRS{idProduct}=="2412", ENV{ID_INPUT_JOYSTICK}=="1", TAG+="steam-controller"
-# SUBSYSTEM=="input", ATTRS{idVendor}=="04b4", ATTRS{idProduct}=="2412", ENV{ID_INPUT_JOYSTICK}=="1", ENV{STEAM_INPUT_ENABLE}="1"
-# SUBSYSTEM=="input", ATTRS{idVendor}=="04b4", ATTRS{idProduct}=="2412", ENV{ID_INPUT_JOYSTICK}=="1", RUN+="/usr/bin/chmod 666 /dev/input/event%n"
+
+# Hide physical input devices from Steam/SDL/libinput to prevent double input
+# This ensures ONLY the virtual InputPlumber device is seen by games
+# We use := to prevent further modification by subsequent rules
+SUBSYSTEM=="input", ATTRS{idVendor}=="04b4", ATTRS{idProduct}=="2412", ENV{ID_INPUT}:="", ENV{ID_INPUT_JOYSTICK}:="", ENV{ID_INPUT_KEY}:="", ENV{ID_INPUT_KEYBOARD}:="", ENV{ID_INPUT_MOUSE}:="", ENV{ID_INPUT_TOUCHPAD}:="", ENV{ID_INPUT_TOUCHSCREEN}:="", ENV{ID_INPUT_TABLET}:="", ENV{LIBINPUT_IGNORE_DEVICE}:="1"
 
 # 8BitDo Ultimate 2 2.4GHz/Dongle and Bluetooth
 KERNEL=="hidraw*", ATTRS{idProduct}=="6012", ATTRS{idVendor}=="2dc8", MODE="0660", TAG+="uaccess"
