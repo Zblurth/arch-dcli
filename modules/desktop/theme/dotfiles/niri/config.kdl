@@ -75,8 +75,8 @@ layout {
 }
 
 // --- Workspaces ---
-workspace "browser" {}
-workspace "social" {}
+workspace "1" {}
+workspace "2" {}
 workspace "3" {}
 
 // --- Window Rules ---
@@ -86,29 +86,30 @@ window-rule {
     draw-border-with-background false
 }
 
-// 1. Browser (Vivaldi -> Workspace 'browser')
-window-rule {
-    match app-id=r#"^vivaldi.*$"#
-    open-on-workspace "browser"
-    default-column-width { proportion 1.0; }
-}
-
-// 2. Social (Deezer/Vesktop -> Workspace 'social')
+// 1. Social (Deezer/Vesktop -> Workspace '1')
 window-rule {
     match app-id="deezer-enhanced"
-    open-on-workspace "social"
+    open-on-workspace "1"
     default-column-width { proportion 0.33333; }
 }
 window-rule {
     match app-id="vesktop"
-    open-on-workspace "social"
+    open-on-workspace "1"
     default-column-width { proportion 0.66667; }
 }
 
+// 2. Browser (Vivaldi -> Workspace '2')
+window-rule {
+    match app-id=r#"^vivaldi.*$"#
+    open-on-workspace "2"
+    open-fullscreen true
+}
+
 // 3. Floating Rules & Tweaks
+// ... (rest of window rules)
 window-rule {
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width {}
+    default-column-width { proportion 0.5; }
 }
 
 // Picture-in-Picture
@@ -193,12 +194,12 @@ binds {
     Mod+Shift+Up    { move-column-to-workspace-up; }
 
     // === Workspace Targeting ===
-    Mod+1 { focus-workspace "browser"; }
-    Mod+2 { focus-workspace "social"; }
+    Mod+1 { focus-workspace "1"; }
+    Mod+2 { focus-workspace "2"; }
     Mod+3 { focus-workspace "3"; }
 
-    Mod+Shift+1 { move-column-to-workspace "browser"; }
-    Mod+Shift+2 { move-column-to-workspace "social"; }
+    Mod+Shift+1 { move-column-to-workspace "1"; }
+    Mod+Shift+2 { move-column-to-workspace "2"; }
     Mod+Shift+3 { move-column-to-workspace "3"; }
 
     // === Layout & Sizing ===
@@ -235,6 +236,7 @@ spawn-at-startup "bash" "-c" "/usr/lib/polkit-gnome/polkit-gnome-authentication-
 
 // App Startup
 spawn-at-startup "bash" "-c" "sleep 2 && corectrl --minimize"
+spawn-at-startup "deezer-enhanced.js" "--disable-gpu" "--enable-features=UseOzonePlatform" "--ozone-platform=wayland"
+spawn-at-startup "vesktop" "--enable-features=UseOzonePlatform" "--ozone-platform=wayland"
 spawn-at-startup "vivaldi"
-spawn-at-startup "bash" "-c" "deezer-enhanced --disable-gpu --enable-features=UseOzonePlatform --ozone-platform=wayland"
 
