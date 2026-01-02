@@ -109,7 +109,7 @@ window-rule {
 // ... (rest of window rules)
 window-rule {
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width { proportion 0.5; }
+    default-column-width { proportion 0.33333; }
 }
 
 // Picture-in-Picture

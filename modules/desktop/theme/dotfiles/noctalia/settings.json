@@ -59,39 +59,11 @@
                 {
                     "colorizeDistroLogo": false,
                     "colorizeSystemIcon": "primary",
-                    "customIconPath": "",
-                    "enableColorization": true,
+                    "customIconPath": "/home/lune/Pictures/adachi_rei-removebg-preview.png",
+                    "enableColorization": false,
                     "icon": "noctalia",
                     "id": "ControlCenter",
-                    "useDistroLogo": true
-                },
-                {
-                    "hideMode": "alwaysExpanded",
-                    "icon": "rocket",
-                    "id": "CustomButton",
-                    "leftClickExec": "qs -c noctalia-shell ipc call launcher toggle",
-                    "leftClickUpdateText": false,
-                    "maxTextLength": {
-                        "horizontal": 10,
-                        "vertical": 10
-                    },
-                    "middleClickExec": "",
-                    "middleClickUpdateText": false,
-                    "parseJson": false,
-                    "rightClickExec": "",
-                    "rightClickUpdateText": false,
-                    "showIcon": true,
-                    "textCollapse": "",
-                    "textCommand": "",
-                    "textIntervalMs": 3000,
-                    "textStream": false,
-                    "wheelDownExec": "",
-                    "wheelDownUpdateText": false,
-                    "wheelExec": "",
-                    "wheelMode": "unified",
-                    "wheelUpExec": "",
-                    "wheelUpUpdateText": false,
-                    "wheelUpdateText": false
+                    "useDistroLogo": false
                 },
                 {
                     "customFont": "",
@@ -100,7 +72,7 @@
                     "id": "Clock",
                     "tooltipFormat": "HH:mm ddd, MMM dd",
                     "useCustomFont": false,
-                    "usePrimaryColor": false
+                    "usePrimaryColor": true
                 },
                 {
                     "compactMode": false,
@@ -117,13 +89,28 @@
                     "usePrimaryColor": true
                 },
                 {
-                    "colorizeIcons": false,
+                    "colorizeIcons": true,
                     "hideMode": "hidden",
                     "id": "ActiveWindow",
-                    "maxWidth": 145,
+                    "maxWidth": 300,
                     "scrollingMode": "hover",
                     "showIcon": true,
                     "useFixedWidth": false
+                },
+                {
+                    "defaultSettings": {
+                        "notes": [
+                        ],
+                        "showCountInBar": true
+                    },
+                    "id": "plugin:simple-notes"
+                },
+                {
+                    "defaultSettings": {
+                        "hideBackground": false,
+                        "minimumThreshold": 10
+                    },
+                    "id": "plugin:catwalk"
                 }
             ],
             "right": [
@@ -216,7 +203,7 @@
                 "id": "audio-card"
             },
             {
-                "enabled": false,
+                "enabled": true,
                 "id": "brightness-card"
             },
             {
@@ -238,9 +225,6 @@
                     "id": "Bluetooth"
                 },
                 {
-                    "id": "ScreenRecorder"
-                },
-                {
                     "id": "WallpaperSelector"
                 }
             ],
@@ -253,9 +237,6 @@
                 },
                 {
                     "id": "KeepAwake"
-                },
-                {
-                    "id": "NightLight"
                 }
             ]
         }
@@ -264,6 +245,11 @@
         "enabled": false,
         "gridSnap": false,
         "monitorWidgets": [
+            {
+                "name": "DP-1",
+                "widgets": [
+                ]
+            }
         ]
     },
     "dock": {
@@ -287,7 +273,7 @@
         "allowPanelsOnScreenWithoutBar": true,
         "animationDisabled": false,
         "animationSpeed": 1,
-        "avatarImage": "/home/lune/.face",
+        "avatarImage": "/home/lune/Pictures/MikePipebom.png",
         "boxRadiusRatio": 1,
         "compactLockScreen": false,
         "dimmerOpacity": 0.2,
@@ -302,7 +288,7 @@
         "shadowDirection": "bottom_left",
         "shadowOffsetX": -2,
         "shadowOffsetY": 2,
-        "showHibernateOnLockScreen": false,
+        "showHibernateOnLockScreen": true,
         "showScreenCorners": false,
         "showSessionButtonsOnLockScreen": true
     },
@@ -374,7 +360,8 @@
             0,
             1,
             2,
-            4
+            4,
+            3
         ],
         "location": "top_right",
         "monitors": [
@@ -394,7 +381,7 @@
         "videoSource": "portal"
     },
     "sessionMenu": {
-        "countdownDuration": 10000,
+        "countdownDuration": 5000,
         "enableCountdown": true,
         "largeButtonsStyle": false,
         "position": "center",
@@ -402,20 +389,20 @@
             {
                 "action": "lock",
                 "command": "",
-                "countdownEnabled": true,
-                "enabled": true
+                "countdownEnabled": false,
+                "enabled": false
             },
             {
                 "action": "suspend",
                 "command": "",
-                "countdownEnabled": true,
+                "countdownEnabled": false,
                 "enabled": true
             },
             {
                 "action": "hibernate",
                 "command": "",
-                "countdownEnabled": true,
-                "enabled": true
+                "countdownEnabled": false,
+                "enabled": false
             },
             {
                 "action": "reboot",
@@ -504,7 +491,7 @@
         "wifiDetailsViewMode": "grid"
     },
     "wallpaper": {
-        "directory": "/home/lune/.config/arch-config/wallpapers",
+        "directory": "/home/lune/Pictures/Wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "fillColor": "#000000",
