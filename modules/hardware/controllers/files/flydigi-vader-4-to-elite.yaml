@@ -1,0 +1,44 @@
+version: 1
+kind: CapabilityMap
+name: flydigi-vader-4-to-elite
+id: flydigi-vader-4-to-elite
+
+mapping:
+  # Map Vader Paddles to Xbox Elite Paddles
+  # Note: The source names (LeftPaddle3 etc.) come from the driver's internal decoding
+  - name: M1
+    source_events:
+      - gamepad:
+          button: LeftPaddle3 # M1
+    target_event:
+      gamepad:
+        button: BtnPaddle1    # Xbox P1
+
+  - name: M2
+    source_events:
+      - gamepad:
+          button: RightPaddle3 # M2
+    target_event:
+      gamepad:
+        button: BtnPaddle2     # Xbox P2
+
+  - name: M3
+    source_events:
+      - gamepad:
+          button: LeftPaddle4  # M3
+    target_event:
+      gamepad:
+        button: BtnPaddle3     # Xbox P3
+
+  - name: M4
+    source_events:
+      - gamepad:
+          button: RightPaddle4 # M4
+    target_event:
+      gamepad:
+        button: BtnPaddle4     # Xbox P4
+
+  # Map C and Z (Xbox Elite doesn't have native C/Z, so we map them to Share/Guide or generic)
+  # For now, let's map them to keyboard keys or something useful, OR leave them unmapped if untargetable.
+  # Let's try mapping them to the Elite's Profile Switch or just pass them through if possible.
+  # For safety, I will comment them out until we confirm M1-M4 works.

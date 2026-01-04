@@ -21,9 +21,11 @@ echo "✓ Udev rules installed."
 # 2. Install InputPlumber Configs
 echo "--- InputPlumber ---"
 sudo mkdir -p /etc/inputplumber/devices.d
+sudo mkdir -p /etc/inputplumber/capability_maps
 sudo cp "$FILES_DIR/config.yaml" /etc/inputplumber/config.yaml
 sudo cp "$FILES_DIR/60-flydigi_vader_4_pro.yaml" /etc/inputplumber/devices.d/
-echo "✓ InputPlumber profiles installed."
+sudo cp "$FILES_DIR/flydigi-vader-4-to-elite.yaml" /etc/inputplumber/capability_maps/
+echo "✓ InputPlumber profiles & maps installed."
 
 # 3. Install Sleep Guard Script
 echo "--- Sleep Guard ---"
