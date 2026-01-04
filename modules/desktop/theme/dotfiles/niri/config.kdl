@@ -1,5 +1,14 @@
 // === QUAD-CHECKED CONFIG.KDL ===
 
+prefer-no-csd
+
+// --- Environment ---
+environment {
+    // Hide the "Brick" Controller (Flydigi Vader 4 Pro D-Input Physical Node)
+    // SDL apps (Steam, Games) will only see the InputPlumber Virtual Device.
+    SDL_GAMECONTROLLER_IGNORE_DEVICES "0x04b4/0x2412"
+}
+
 // --- Input & Gestures ---
 input {
     keyboard {
@@ -67,6 +76,7 @@ layout {
 
     shadow {
         on
+        draw-behind-window false
         softness 30
         spread 5
         offset x=0 y=5
@@ -102,14 +112,20 @@ window-rule {
 window-rule {
     match app-id=r#"^vivaldi.*$"#
     open-on-workspace "2"
-    open-fullscreen true
+    open-maximized true
 }
 
 // 3. Floating Rules & Tweaks
 // ... (rest of window rules)
 window-rule {
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width { proportion 0.33333; }
+    default-column-width {}
+}
+
+window-rule {
+    match app-id="wezterm-float"
+    open-floating true
+    default-column-width { proportion 0.5; }
 }
 
 // Picture-in-Picture
@@ -215,10 +231,9 @@ binds {
     Mod+Period { expel-window-from-column; }
 
     // === Audio & Hardware ===
-    // Using swayosd-client for OSD feedback
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "raise"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "lower"; }
-    XF86AudioMute        allow-when-locked=true { spawn "swayosd-client" "--output-volume" "mute-toggle"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
+    XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
 
     // Media Controls
     XF86AudioPlay        allow-when-locked=true { spawn "playerctl" "play-pause"; }
@@ -227,10 +242,7 @@ binds {
 }
 
 // --- Startup ---
-spawn-at-startup "noctalia-shell"
-spawn-at-startup "swayosd-server"
 spawn-at-startup "xwayland-satellite"
-// Removed conflicting swww-daemon (Noctalia handles wallpaper)
 spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store"
 spawn-at-startup "bash" "-c" "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 

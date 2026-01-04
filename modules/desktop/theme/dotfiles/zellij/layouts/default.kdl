@@ -1,0 +1,10 @@
+layout {
+    pane // The main terminal area
+    
+    // The Standard Status Bar (Bottom)
+    // This shows the input mode, key hints, and tabs.
+    // Perfect for learning the ropes.
+    pane size=2 borderless=true {
+        plugin location="status-bar"
+    }
+}

@@ -21,6 +21,19 @@ sudo snapper rollback <id>    # Rollback to a specific snapshot ID
 sudo snapper delete <id>      # Delete a snapshot
 ```
 
+## 📂 Yazi (File Manager)
+Fast, modal TUI file manager.
+- `~` (or `Shift + `) : **The God Key** (Show all keybinds/Help)
+- `Enter` / `l` : Enter directory / Open file
+- `h` : Go up to parent directory
+- `.` : Toggle hidden files
+- `Space` : Select file
+- `y` : Yank (Copy)
+- `x` : Cut (Move)
+- `p` : Paste
+- `d` then `d` : Delete to trash
+- `q` : Quit
+
 ## 📋 Clipboard (Cliphist)
 Manage clipboard history.
 ```bash

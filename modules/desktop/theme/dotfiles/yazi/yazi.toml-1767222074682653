@@ -1,0 +1,33 @@
+# Yazi Configuration (The File Manager)
+
+[manager]
+layout = [1, 4, 3] # Width ratios: Parent, Current, Preview
+sort_by = "natural"
+sort_sensitive = false
+sort_reverse = false
+sort_dir_first = true
+linemode = "size"
+show_hidden = false
+show_symlink = true
+
+[preview]
+tab_size = 2
+max_width = 600
+max_height = 900
+cache_dir = ""
+
+[opener]
+edit = [
+    { run = '${EDITOR:=vi} "$@"', block = true, desc = "Edit" },
+]
+open = [
+    { run = 'xdg-open "$@"', desc = "Open" },
+]
+
+[input]
+# Adjusting floating window size (Input/Select/Etc)
+# Yazi uses x/y/w/h percentages
+cursor_blink = false
+
+# Keybindings are defined in keymap.toml, not here.
+# But visuals are here.

@@ -1,0 +1,8 @@
+name: internet
+description: "Browsers and Networking UI (Managed)"
+
+post_install_hook: "scripts/setup.sh"
+hooks_behavior: always
+
+package_files:
+  - packages.yaml

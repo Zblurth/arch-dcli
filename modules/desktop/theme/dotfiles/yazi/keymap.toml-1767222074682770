@@ -1,0 +1,9 @@
+# Yazi Keybindings
+
+[manager]
+prepend_keymap = [
+    { on = [ "?" ], run = "help", desc = "Open Help" },
+    { on = [ "<C-s>" ], run = "shell $SHELL --block --confirm", desc = "Open Shell Here" },
+    # Make dot toggle hidden files
+    { on = [ "." ], run = "hidden toggle", desc = "Toggle Hidden Files" },
+]

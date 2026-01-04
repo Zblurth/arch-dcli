@@ -1,5 +1,30 @@
-description: "Theme dependencies"
+description: "Theme dependencies and Terminal Stack"
 packages:
+  # Base Themes (Fallbacks)
   - catppuccin-gtk-theme-mocha
   - tela-icon-theme-purple-git
   - bibata-cursor-theme-bin
+  
+  # The Container
+  - wezterm
+  - zellij
+  
+  # The Shell
+  - zsh
+  - starship
+  
+  # The Modern CoreUtils
+  - eza
+  - bat
+  - fd
+  - ripgrep
+  - zoxide
+  - fzf
+  - yazi
+  - ffmpegthumbnailer
+  - unarchiver
+  - poppler # PDF previews
+  
+  # Fonts
+  - ttf-jetbrains-mono-nerd
+  - otf-font-awesome

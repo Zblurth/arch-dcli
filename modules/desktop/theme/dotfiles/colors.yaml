@@ -1,19 +1,33 @@
-# Central Color System
-# Source of Truth for Magician Engine
-background: "#1e1e2e"
-foreground: "#cdd6f4"
-cursor: "#f5e0dc"
-primary: "#89b4fa"
-secondary: "#74c7ec"
-accent: "#f5c2e7"
-warning: "#f9e2af"
-error: "#f38ba8"
-success: "#a6e3a1"
-color0: "#45475a"
-color1: "#f38ba8"
-color2: "#a6e3a1"
-color3: "#f9e2af"
-color4: "#89b4fa"
-color5: "#f5c2e7"
-color6: "#94e2d5"
-color7: "#bac2de"
+colors:
+  # The Core Palette (Catppuccin Mocha)
+  background: "#1e1e2e"
+  foreground: "#cdd6f4"
+  cursor: "#f5e0dc"
+  
+  # Standard ANSI
+  color0: "#45475a"  # Surface 1
+  color1: "#f38ba8"  # Red
+  color2: "#a6e3a1"  # Green
+  color3: "#f9e2af"  # Yellow
+  color4: "#89b4fa"  # Blue
+  color5: "#f5c2e7"  # Pink
+  color6: "#94e2d5"  # Teal
+  color7: "#bac2de"  # Subtext 1
+  
+  # Bright ANSI
+  color8: "#585b70"  # Surface 2
+  color9: "#f38ba8"
+  color10: "#a6e3a1"
+  color11: "#f9e2af"
+  color12: "#89b4fa"
+  color13: "#f5c2e7"
+  color14: "#94e2d5"
+  color15: "#a6adc8" # Subtext 0
+
+  # Semantic / UI
+  primary: "#89b4fa"
+  secondary: "#f5c2e7"
+  accent: "#cba6f7"
+  warning: "#f9e2af"
+  error: "#f38ba8"
+  success: "#a6e3a1"
