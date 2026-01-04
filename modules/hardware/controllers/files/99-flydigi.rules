@@ -1,0 +1,8 @@
+# Flydigi Vader 4 Pro - Universal Rule
+# Tag as a Steam Controller so Steam Input grabs it directly.
+
+# DInput Mode (Standard) - PID 2414
+KERNEL=="hidraw*", ATTRS{idVendor}=="04b4", ATTRS{idProduct}=="2414", MODE="0660", TAG+="uaccess", TAG+="steam-controller"
+
+# DInput Mode (Quirk/XInput) - PID 2412
+KERNEL=="hidraw*", ATTRS{idVendor}=="04b4", ATTRS{idProduct}=="2412", MODE="0660", TAG+="uaccess", TAG+="steam-controller"

@@ -1,1 +1,0 @@
-SUBSYSTEM=="input", ATTRS{idVendor}=="04b4", ATTRS{idProduct}=="2412", ENV{ID_INPUT}:="", ENV{ID_INPUT_JOYSTICK}:="", ENV{ID_INPUT_KEY}:="", ENV{LIBINPUT_IGNORE_DEVICE}:="1", RUN+="/usr/bin/rm -f %E{DEVNAME}"
