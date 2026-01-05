@@ -4,7 +4,7 @@ local config = wezterm.config_builder()
 -- 1. Appearance (The Glass)
 config.window_decorations = "NONE"
 config.window_background_opacity = 0.85
-config.text_background_opacity = 1.0 
+config.text_background_opacity = 1.0
 config.enable_tab_bar = false
 config.window_close_confirmation = "NeverPrompt"
 config.window_padding = {
@@ -18,7 +18,11 @@ config.window_padding = {
 -- We assume a patched font is available.
 -- Magician can patch this dynamically later, but we set a solid default.
 config.font = wezterm.font_with_fallback {
-  'JetBrains Mono Nerd Font',
+  'JetBrainsMono Nerd Font',
+  'Noto Sans',
+  'Noto Sans Symbols',
+  'Noto Sans CJK SC',
+  'Noto Color Emoji',
   'Symbols Nerd Font',
 }
 config.font_size = 12.0

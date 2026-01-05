@@ -12,6 +12,8 @@ packages:
   - noto-fonts            # Latin, Greek, Cyrillic
   - noto-fonts-cjk        # Chinese, Japanese, Korean
   - noto-fonts-emoji      # Standard emojis
+  - noto-fonts-extra      # Rare Unicode blocks
+
   
   # --- Icon Sets ---
   - woff2-font-awesome      # Extra icons for bars/shells
