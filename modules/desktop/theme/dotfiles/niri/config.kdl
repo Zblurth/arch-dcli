@@ -146,6 +146,13 @@ window-rule {
     open-floating true
 }
 
+// Vivaldi Picture-in-Picture (Has empty app-id)
+window-rule {
+    match title="^Picture in picture$"
+    open-floating true
+    default-column-width { proportion 0.3; }
+}
+
 // File Managers (Floating overrides)
 window-rule {
     match app-id="yazi-floating"
