@@ -52,7 +52,7 @@ output "DP-3" {
 // --- Layout ---
 layout {
     gaps 8
-    center-focused-column "never"
+    center-focused-column "on-overflow"
     always-center-single-column
 
     preset-column-widths {
@@ -102,6 +102,11 @@ window-rule {
     open-on-workspace "1"
     default-column-width { proportion 0.33333; }
 }
+
+window-rule {
+    match app-id=r#"^zed|zeditor|dev\.zed\.Zed$"#
+    default-column-width { proportion 0.33333; }
+}
 window-rule {
     match app-id="vesktop"
     open-on-workspace "1"
@@ -113,6 +118,13 @@ window-rule {
     match app-id=r#"^vivaldi.*$"#
     open-on-workspace "2"
     open-maximized true
+}
+
+// 4. Gaming (Steam -> Workspace '3')
+window-rule {
+    match app-id="^steam$"
+    exclude title="^notificationtoasts.*$"
+    default-column-width { proportion 0.33333; }
 }
 
 // 3. Floating Rules & Tweaks
@@ -152,14 +164,13 @@ window-rule {
 window-rule {
     match app-id="^noctalia-shell$" title="^notification-window$"
     open-floating true
-    default-floating-position x=16 y=16 relative-to="top-right"
     open-focused false
 }
+
 window-rule {
     match app-id="^steam$" title="^notificationtoasts.*$"
     open-floating true
     open-focused false
-    default-floating-position x=16 y=16 relative-to="top-right"
 }
 
 // --- Keybinds ---
@@ -167,6 +178,7 @@ binds {
     // === Applications ===
     Mod+Return { spawn "wezterm"; }
     Mod+Shift+Return { spawn "wezterm" "start" "--class" "wezterm-float"; }
+    Mod+Z { spawn "zeditor"; }
     Mod+B { spawn "vivaldi"; }
 
     // File Managers
