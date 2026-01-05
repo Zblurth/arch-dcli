@@ -3,6 +3,8 @@
 
 host: arch
 description: CachyOS Workstation (Ryzen 7800X3D + AMD GPU)
+# Hardware:
+# - Monitor: Fox Spirit PGM340 (34" VA 100Hz UWQHD) - "Beihai Century"
 
 # Enabled modules (Hierarchical)
 enabled_modules:
@@ -16,7 +18,7 @@ enabled_modules:
   
   # --- Hardware ---
   - hardware/amdgpu
-  - hardware/controllers
+
   
   # --- Desktop (Graphical Layer) ---
   - desktop/niri
@@ -30,6 +32,7 @@ enabled_modules:
   - apps/internet
   - apps/media
   - apps/dev
+  - apps/docker
   - apps/utils
   - apps/gaming
 
@@ -57,12 +60,13 @@ services:
     - ufw                   # Firewall
     - avahi-daemon          # Local Network Discovery
     - swayosd-libinput-backend # OSD Backend
-    - inputplumber          # Flydigi/Controller Router
+
     - snapper-timeline.timer
     - snapper-cleanup.timer
     - grub-btrfsd
     - power-profiles-daemon
     - coolercontrold
+    - docker
   disabled:
     - sddm
     - lightdm

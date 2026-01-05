@@ -150,7 +150,7 @@ window-rule {
 window-rule {
     match title="^Picture in picture$"
     open-floating true
-    default-column-width { proportion 0.3; }
+    default-column-width { proportion 0.2; }
 }
 
 // File Managers (Floating overrides)
