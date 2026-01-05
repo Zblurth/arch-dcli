@@ -23,8 +23,8 @@ config.font = wezterm.font_with_fallback {
   'Noto Sans Symbols',
   'Noto Sans CJK SC',
   'Noto Color Emoji',
-  'Symbols Nerd Font',
 }
+config.warn_about_missing_glyphs = false
 config.font_size = 12.0
 config.line_height = 1.2
 config.initial_cols = 80
@@ -62,4 +62,5 @@ config.keys = {
     },
 }
 
+config.warn_about_missing_glyphs = false
 return config
