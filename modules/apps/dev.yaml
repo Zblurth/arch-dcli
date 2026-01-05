@@ -8,3 +8,4 @@ packages:
   - github-cli
   - obsidian
   - virt-manager
+  - orca-slicer-bin

@@ -1,0 +1,13 @@
+[Unit]
+Description=Force Unblock and Power On Bluetooth
+After=bluetooth.service network.target
+Requires=bluetooth.service
+
+[Service]
+Type=oneshot
+ExecStartPre=/usr/bin/sleep 5
+ExecStart=/bin/bash -c '/usr/bin/rfkill unblock bluetooth; /usr/bin/sleep 2; /usr/bin/bluetoothctl power on || true'
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
