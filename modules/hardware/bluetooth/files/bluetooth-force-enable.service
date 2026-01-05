@@ -1,12 +1,25 @@
 [Unit]
-Description=Force Unblock and Power On Bluetooth
-After=bluetooth.service network.target
-Requires=bluetooth.service
+Description=Force Unblock and Power On Bluetooth (Nuclear Option)
+After=multi-user.target
+# We don't want to Require bluetooth.service because we might restart it
+# We want this to run after boot is mostly done
 
 [Service]
 Type=oneshot
+# 1. Stop the service to free the module
+ExecStartPre=/usr/bin/systemctl stop bluetooth.service
+# 2. Wait a bit
+ExecStartPre=/usr/bin/sleep 2
+# 3. Reload the kernel module to clear "Failed (0x03)" state
+ExecStartPre=/usr/bin/bash -c '/usr/sbin/modprobe -r btusb && /usr/sbin/modprobe btusb'
+# 4. Wait for module to settle
+ExecStartPre=/usr/bin/sleep 2
+# 5. Start the service again
+ExecStartPre=/usr/bin/systemctl start bluetooth.service
+# 6. Wait for daemon
 ExecStartPre=/usr/bin/sleep 5
-ExecStart=/bin/bash -c '/usr/bin/rfkill unblock bluetooth; /usr/bin/sleep 2; /usr/bin/bluetoothctl power on || true'
+# 7. Unblock and Power On
+ExecStart=/bin/bash -c '/usr/bin/rfkill unblock bluetooth; /usr/bin/sleep 1; /usr/bin/bluetoothctl power on || true'
 RemainAfterExit=yes
 
 [Install]

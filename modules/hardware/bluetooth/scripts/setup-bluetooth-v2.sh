@@ -27,6 +27,14 @@ if [ -f "$CONFIG" ]; then
     
     # Install Unblock Rule (The "Slap Awake" Fix)
     SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+    # Install Modprobe Config (The "Insomnia" Fix - Disable Autosuspend)
+    MODPROBE_FILE="$SCRIPT_DIR/../files/btusb-mediatek.conf"
+    if [ -f "$MODPROBE_FILE" ]; then
+        echo "Installing btusb autosuspend disable config..."
+        sudo cp "$MODPROBE_FILE" /etc/modprobe.d/
+    fi
+
     RULE_FILE="$SCRIPT_DIR/../files/70-bluetooth-unblock.rules"
     if [ -f "$RULE_FILE" ]; then
         echo "Installing persistent unblock rule..."
