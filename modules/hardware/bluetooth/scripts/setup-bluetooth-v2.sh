@@ -45,11 +45,13 @@ if [ -f "$CONFIG" ]; then
 
     # Install Systemd Force Service (The "Sledgehammer" Fix)
     SERVICE_FILE="$SCRIPT_DIR/../files/bluetooth-force-enable.service"
+    FORCE_ENABLED=false
     if [ -f "$SERVICE_FILE" ]; then
         echo "Installing force-enable service..."
         sudo cp "$SERVICE_FILE" /etc/systemd/system/
         sudo systemctl daemon-reload
         sudo systemctl enable --now bluetooth-force-enable.service
+        FORCE_ENABLED=true
     fi
 
     # Unblock rfkill if soft-blocked
@@ -58,8 +60,8 @@ if [ -f "$CONFIG" ]; then
         sudo rfkill unblock bluetooth
     fi
 
-    # Restart service to apply changes if it's already running
-    if systemctl is-active --quiet bluetooth; then
+    # Restart service to apply changes if it's already running AND we didn't just force-cycle it
+    if [ "$FORCE_ENABLED" = false ] && systemctl is-active --quiet bluetooth; then
         echo "Restarting bluetooth service to apply changes..."
         sudo systemctl try-restart bluetooth
     fi

@@ -5,11 +5,11 @@
   <property name="last-icon-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_NORMAL"/>
   <property name="last-details-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_38_PERCENT"/>
   <property name="last-details-view-column-order" type="string" value="THUNAR_COLUMN_NAME,THUNAR_COLUMN_SIZE,THUNAR_COLUMN_SIZE_IN_BYTES,THUNAR_COLUMN_TYPE,THUNAR_COLUMN_DATE_MODIFIED"/>
-  <property name="last-details-view-column-widths" type="string" value="50,133,120,50,163,50,50,300,1228,50,50,59,50,130"/>
+  <property name="last-details-view-column-widths" type="string" value="50,133,120,50,163,50,50,300,1149,50,50,79,50,189"/>
   <property name="last-side-pane" type="string" value="ThunarShortcutsPane"/>
   <property name="last-side-pane-size" type="int" value="200"/>
   <property name="last-window-width" type="int" value="1708"/>
-  <property name="last-window-height" type="int" value="1368"/>
+  <property name="last-window-height" type="int" value="1403"/>
   <property name="last-window-maximized" type="bool" value="false"/>
   <property name="last-separator-position" type="int" value="170"/>
   <property name="last-show-hidden" type="bool" value="false"/>
@@ -18,7 +18,10 @@
   <property name="misc-file-size-binary" type="bool" value="true"/>
   <property name="misc-tabs-for-folders" type="bool" value="true"/>
   <property name="misc-open-new-window-as-tab" type="bool" value="true"/>
-  <property name="misc-confirm-close-multiple-tabs" type="bool" value="true"/>
+  <property name="misc-confirm-close-multiple-tabs" type="bool" value="false"/>
   <property name="misc-status-bar-active" type="bool" value="true"/>
   <property name="misc-menubar-visibile" type="bool" value="false"/>
+  <property name="misc-middle-click-in-tab" type="bool" value="true"/>
+  <property name="last-sort-column" type="string" value="THUNAR_COLUMN_DATE_MODIFIED"/>
+  <property name="last-sort-order" type="string" value="GTK_SORT_DESCENDING"/>
 </channel>

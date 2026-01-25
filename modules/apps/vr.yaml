@@ -1,0 +1,12 @@
+description: VR Configuration Tools (Requires ports 9757 TCP/UDP + 5353 UDP for WiVRn)
+packages:
+  - wget
+  - fuse2 # Required for many AppImages
+  - unzip
+  - android-tools
+  - avahi
+  - nss-mdns
+  - openxr
+  
+post_install_hook: scripts/setup-envision.sh
+hook_behavior: ask

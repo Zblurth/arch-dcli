@@ -1,0 +1,2 @@
+# Force unblock Bluetooth on add (Fix for stubborn cards)
+ACTION=="add", KERNEL=="hci0", RUN+="/usr/bin/rfkill unblock bluetooth"

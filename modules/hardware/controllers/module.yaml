@@ -1,5 +1,0 @@
-description: "Native Flydigi Vader 4 Pro Support (Steam Input)"
-post_install_hook: "scripts/install-rules.sh"
-hooks_behavior: always
-package_files:
-  - packages.yaml

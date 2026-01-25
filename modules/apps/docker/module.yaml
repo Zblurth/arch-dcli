@@ -1,0 +1,8 @@
+description: "Docker Container Engine & Tools"
+
+# Run setup script to handle group permissions
+post_install_hook: "scripts/setup.sh"
+hooks_behavior: ask  # Ask the user, just in case they don't want the group change automatically
+
+package_files:
+  - packages.yaml

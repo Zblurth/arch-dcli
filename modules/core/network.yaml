@@ -10,3 +10,4 @@ packages:
   - rsync
   - wget
   - curl
+  - ufw

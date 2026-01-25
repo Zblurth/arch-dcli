@@ -35,9 +35,11 @@ enabled_modules:
   - apps/docker
   - apps/utils
   - apps/gaming
+  - apps/vr
 
 # Host-specific packages
-packages: []
+packages:
+  - xdg-desktop-portal-gnome
 
 # Exclude packages
 exclude: []
@@ -67,6 +69,7 @@ services:
     - power-profiles-daemon
     - coolercontrold
     - docker
+    - disable-wakeup-gpp
   disabled:
     - sddm
     - lightdm

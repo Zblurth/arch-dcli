@@ -6,10 +6,10 @@ packages:
   - starship
   - zsh-syntax-highlighting
   - zsh-autosuggestions
-  - thunar              # Main GUI File Manager (Minimal Backup)
+  - thunar # Main GUI File Manager (Minimal Backup)
   - thunar-archive-plugin # Archive integration
-  - thunar-volman       # Volume manager
-  - tumbler             # Thumbnail support for Thunar
+  - thunar-volman # Volume manager
+  - tumbler # Thumbnail support for Thunar
   - file-roller
   - unzip # GAP FILLED: Archive backends
   - unrar
@@ -24,3 +24,7 @@ packages:
   - tree
   - jq
   - winboat
+  - proton-vpn-cli
+  - gemini-cli
+  - matugen
+  - glances
